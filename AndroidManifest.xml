@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ===== PERMISSIONS RÉSEAU ===== -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- ===== PERMISSIONS IMPRESSION BLUETOOTH ===== -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!-- Android 12+ -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
+
+    <!-- ===== PERMISSIONS IMPRESSION USB ===== -->
+    <uses-permission android:name="android.permission.USB_PERMISSION"/>
+
+    <!-- ===== PERMISSIONS SUNMI POS ===== -->
+    <!-- Accès au service d'impression interne Sunmi -->
+    <uses-permission android:name="com.sunmi.permission.PRINT_SERVICE"/>
+
+    <!-- ===== PERMISSIONS STOCKAGE (pour logs) ===== -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"/>
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.LotAtoPro"
+        android:usesCleartextTraffic="true"
+        android:hardwareAccelerated="true">
+
+        <!-- ===== ACTIVITÉ PRINCIPALE ===== -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ===== SERVICE IMPRESSION SUNMI ===== -->
+        <!-- Lié au service système Sunmi interne -->
+        <service android:name=".print.SunmiPrintService"
+            android:enabled="true"
+            android:exported="false"/>
+
+        <!-- ===== PROVIDER USB pour POS génériques ===== -->
+        <meta-data
+            android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+            android:resource="@xml/device_filter"/>
+
+    </application>
+
+</manifest>

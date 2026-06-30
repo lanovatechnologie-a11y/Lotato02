@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Filtre USB générique : accepte la plupart des imprimantes thermiques USB -->
+    <usb-device vendor-id="1208"/>  <!-- Generic printer vendor -->
+    <usb-device vendor-id="1305"/>  <!-- Xprinter -->
+    <usb-device vendor-id="4070"/>  <!-- Rongta -->
+</resources>
