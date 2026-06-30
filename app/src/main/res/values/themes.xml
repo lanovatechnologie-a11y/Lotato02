@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.LotAtoPro" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#1a1a2e</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:statusBarColor">#1a1a2e</item>
+    </style>
+</resources>
