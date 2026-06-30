@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     // URL de votre backend (même qu'avant)
     // Changez ici si vous utilisez un serveur local
     // =========================================================
-    private val APP_URL = "https://lotato2.onrender.com"
+    private val APP_URL = "https://lotato1.onrender.com"
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
